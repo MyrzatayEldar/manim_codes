@@ -1,18 +1,21 @@
 from manim import *
 from numpy import *
 
-
-def set_colour(some_color):
-    return some_color
-
-
 class NewScene(Scene):
     def construct(self):
         
-        a = Axes()
-        graph = a.plot(lambda x: 2*x-3, color=BLUE)
-        self.add(a, graph)
-        
+        # text = Text('«Математика - ғылымдар патшасы»', t2c={'Математика': '#ff9800'}, slant=ITALIC).scale(0.5)
+        # author = Text('Карл Гаусс').scale(0.5).move_to(DOWN*1.3+RIGHT*2.5).set_color('#ff9800')
+        # self.wait()
+        # self.play(Write(text))
+        # self.wait()
+        # self.play(Write(author))
+        # self.wait()
+
+
+
+
+
         # s = MathTex(r'S_{t.b}=S_{b.b}+2 S_{t}').scale(2).set_color(YELLOW)
         # stb = MathTex(r'S_{t.b}-\text{tolyq betinin audany}').scale(0.8).set_color(TEAL_E).move_to(DOWN+LEFT*3)
         # sbb = MathTex(r'S_{b.b}-\text{buiir betinin audany}').scale(0.8).set_color(TEAL_E).move_to(DOWN*2+LEFT*3)
@@ -949,24 +952,20 @@ class NewScene(Scene):
         # label_for_graph = a.get_graph_label(graph, label='y = 2(x-2)')
         # self.play(Create(graph), Write(label_for_graph))
         # self.wait()
-        
-
-
-        
-        # text = MathTex("y", "=", "f", " (", "x", ")")
-        # f_name = Text('Функцияның аты', gradient=(BLUE, GREEN), color=BLUE_C).move_to(DOWN * 2).scale(2)
-        # x_text = Text('Функция аргументі', gradient=(BLUE, GREEN), color=BLUE_C).move_to(DOWN * 2).scale(2)
-        # f = SurroundingRectangle(text[2], buff=.1, color=GREEN_A).scale(3)
-        # x = SurroundingRectangle(text[5], buff=.1, color=GREEN_A).scale(3)
-        # self.wait()
-        # self.play(Write(text.scale(3)))
-        # self.wait()
-        # self.play(Create(f))
-        # self.play(Write(f_name))
-        # self.wait()
-        # self.remove(f)
-        # self.remove(f_name)
-        # self.wait()
-        # self.play(Create(x.move_to(RIGHT * 1.88)))
-        # self.play(Write(x_text))
-        # self.wait()
+        text = MathTex("y", "=", "f", " (", "x", ")")
+        f_name = Text('Функцияның аты', gradient=(BLUE, GREEN), color=BLUE_C).move_to(DOWN * 2).scale(2)
+        x_text = Text('Функция аргументі', gradient=(BLUE, GREEN), color=BLUE_C).move_to(DOWN * 2).scale(2)
+        f = SurroundingRectangle(text[2], buff=.1, color=GREEN_A).scale(3)
+        x = SurroundingRectangle(text[5], buff=.1, color=GREEN_A).scale(3)
+        self.wait()
+        self.play(Write(text.scale(3)))
+        self.wait()
+        self.play(Create(f))
+        self.play(Write(f_name))
+        self.wait()
+        self.remove(f)
+        self.remove(f_name)
+        self.wait()
+        self.play(Create(x.move_to(RIGHT * 1.88)))
+        self.play(Write(x_text))
+        self.wait() 
